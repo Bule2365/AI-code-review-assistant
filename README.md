@@ -42,7 +42,6 @@ ai-code-review-assistant/
 │   │   │   └── python_parser.py
 │   │   └── services/
 │   │       └── ai_review.py
-│   ├── .env
 │   ├── main.py
 │   └── requirements.txt
 │
@@ -104,10 +103,17 @@ GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 PORT=8000
 ```
 
+Jangan lupa ambil api key dari akun google gemiin anda
+
 Jalankan server FastAPI:
 
 ```bash
 python main.py
+```
+
+Atau bisa juga menggunakan:
+```bash
+python -m uvicorn main:app --reload
 ```
 
 Backend akan tersedia di:
@@ -186,10 +192,6 @@ http://localhost:5173
 ---
 
 ## Keamanan
-
-* Seluruh API key disimpan menggunakan file `.env`.
-* Jangan pernah mengunggah file `.env` ke repositori publik.
-* Tambahkan `.env` ke dalam `.gitignore`.
 
 Contoh `.gitignore`:
 

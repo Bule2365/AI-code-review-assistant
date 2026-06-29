@@ -1,27 +1,40 @@
 # AI Code Review Assistant (v1.5)
 
-AI Code Review Assistant adalah platform visual berbasis cloud (*cloud dashboard*) yang dirancang untuk mengotomatisasi proses audit, peninjauan (*review*), dan optimasi kode secara otonom.
+> Intelligent Multi-Language Code Review Platform powered by FastAPI, React, and Gemini AI.
 
-Ditenagai oleh **FastAPI** pada backend dan **Gemini 2.5 Flash** melalui SDK resmi Google GenAI, sistem ini mampu memetakan *Abstract Syntax Tree (AST)*, mendeteksi potensi celah keamanan (*security flaws*), menemukan masalah kualitas kode, serta memberikan rekomendasi optimasi performa secara terstruktur.
+AI Code Review Assistant adalah platform visual berbasis cloud (_cloud dashboard_) yang dirancang untuk mengotomatisasi proses audit, peninjauan (_review_), dan optimasi kode secara otonom.
+
+Ditenagai oleh **FastAPI** pada backend dan **Gemini 2.5 Flash** melalui SDK resmi Google GenAI, sistem ini mampu memetakan _Abstract Syntax Tree (AST)_, mendeteksi potensi celah keamanan (_security flaws_), menemukan masalah kualitas kode, serta memberikan rekomendasi optimasi performa secara terstruktur.
 
 ---
 
 ## Fitur Utama
 
-* **Autonomous Code Diagnostics**
+- **Autonomous Code Diagnostics**
   Unggah file kode (`.py`, `.js`, `.jsx`) dan AI akan menganalisis struktur serta kualitasnya secara otomatis.
 
-* **Structured JSON AI Output**
+- **Structured JSON AI Output**
   Menggunakan skema validasi **Pydantic** untuk memastikan hasil analisis AI selalu konsisten dan terstruktur.
 
-* **Modern Cyberpunk Dashboard UI**
+- **Modern Cyberpunk Dashboard UI**
   Dibangun menggunakan **React**, **Vite**, **Tailwind CSS v4**, dan **Framer Motion** untuk pengalaman pengguna yang modern dan responsif.
 
-* **Python AST Parsing**
+- **Python AST Parsing**
   Memvalidasi sintaks Python menggunakan parser AST sebelum proses analisis AI dilakukan.
 
-* **Secure API Architecture**
-  Menggunakan *environment variables* untuk penyimpanan kredensial serta konfigurasi CORS yang aman.
+- **Secure API Architecture**
+  Menggunakan _environment variables_ untuk penyimpanan kredensial serta konfigurasi CORS yang aman.
+
+## Demo
+
+Aplikasi mendukung berbagai metode pencarian untuk memberikan hasil yang relevan.
+
+| Deskripsi                                     | Tampilan                                                               |
+| :-------------------------------------------- | :--------------------------------------------------------------------- |
+| Tampilan awal sistem                          | ![Tampilan Awal](assets/images/Screenshot%202026-06-29%20133536.png)   |
+| Tampilan proses AI mulai menganalisis sintaks | ![Tampilan Proses](assets/images/Screenshot%202026-06-29%20134609.png) |
+| Tampilan hasil pada sintaks file javascript   | ![File javascript](assets/images/Screenshot%202026-06-29%20134619.png) |
+| Tampilan hasil pada sintaks file python       | ![File python](assets/images/Screenshot%202026-06-29%20134536.png)     |
 
 ---
 
@@ -42,7 +55,6 @@ ai-code-review-assistant/
 │   │   │   └── python_parser.py
 │   │   └── services/
 │   │       └── ai_review.py
-│   ├── .env
 │   ├── main.py
 │   └── requirements.txt
 │
@@ -69,9 +81,9 @@ ai-code-review-assistant/
 
 Pastikan telah menginstal:
 
-* Python 3.10 atau lebih baru
-* Node.js 18 atau lebih baru
-* npm
+- Python 3.10 atau lebih baru
+- Node.js 18 atau lebih baru
+- npm
 
 ---
 
@@ -104,10 +116,18 @@ GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 PORT=8000
 ```
 
+Jangan lupa ambil api key dari akun google gemiin anda
+
 Jalankan server FastAPI:
 
 ```bash
 python main.py
+```
+
+Atau bisa juga menggunakan:
+
+```bash
+python -m uvicorn main:app --reload
 ```
 
 Backend akan tersedia di:
@@ -161,35 +181,28 @@ http://localhost:5173
    ```
 
 2. Pilih bahasa pemrograman target:
-
-   * Python
-   * JavaScript
+   - Python
+   - JavaScript
 
 3. Unggah file kode:
-
-   * `.py`
-   * `.js`
-   * `.jsx`
+   - `.py`
+   - `.js`
+   - `.jsx`
 
 4. Klik tombol **Execute Diagnostic**.
 
 5. Tunggu proses analisis selesai.
 
 6. Tinjau hasil analisis yang mencakup:
-
-   * Security Review
-   * Performance Analysis
-   * Code Style Assessment
-   * Complexity Metrics
-   * AI Recommendations
+   - Security Review
+   - Performance Analysis
+   - Code Style Assessment
+   - Complexity Metrics
+   - AI Recommendations
 
 ---
 
 ## Keamanan
-
-* Seluruh API key disimpan menggunakan file `.env`.
-* Jangan pernah mengunggah file `.env` ke repositori publik.
-* Tambahkan `.env` ke dalam `.gitignore`.
 
 Contoh `.gitignore`:
 
@@ -207,29 +220,29 @@ __pycache__/
 
 ### Backend
 
-* FastAPI
-* Pydantic
-* Google GenAI SDK
-* Python AST
+- FastAPI
+- Pydantic
+- Google GenAI SDK
+- Python AST
 
 ### Frontend
 
-* React
-* Vite
-* Tailwind CSS v4
-* Framer Motion
-* Axios
+- React
+- Vite
+- Tailwind CSS v4
+- Framer Motion
+- Axios
 
 ---
 
 ## Roadmap
 
-* [ ] Multi-file project analysis
-* [ ] GitHub repository scanning
-* [ ] Pull Request review integration
-* [ ] Team collaboration dashboard
-* [ ] CI/CD integration
-* [ ] PDF report export
+- [ ] Multi-file project analysis
+- [ ] GitHub repository scanning
+- [ ] Pull Request review integration
+- [ ] Team collaboration dashboard
+- [ ] CI/CD integration
+- [ ] PDF report export
 
 ---
 
@@ -240,4 +253,4 @@ Proyek ini dibuat untuk tujuan pembelajaran, eksperimen, dan pengembangan portof
 ---
 
 **AI Code Review Assistant**
-*Intelligent Multi-Language Code Review Platform powered by FastAPI, React, and Gemini AI.*
+_Intelligent Multi-Language Code Review Platform powered by FastAPI, React, and Gemini AI._

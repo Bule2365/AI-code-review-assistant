@@ -124,12 +124,6 @@ Jalankan server FastAPI:
 python main.py
 ```
 
-Atau bisa juga menggunakan:
-
-```bash
-python -m uvicorn main:app --reload
-```
-
 Backend akan tersedia di:
 
 ```text
